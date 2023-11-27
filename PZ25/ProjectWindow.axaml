@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+             x:Class="PZ25.ProjectWindow">
+    <Grid>
+        <Button Name="AddBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="White" Margin="70 0 0 0" Click="AddBtn_OnClick">
+            <StackPanel>
+                <Image Source="Icons/square-plus.png"/>
+            </StackPanel>
+        </Button>
+        <Button Name="DeleteBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="White" Margin="105 0 0 0" Click="DeleteBtn_OnClick">
+            <StackPanel>
+                <Image Source="Icons/square-minus.png"/>
+            </StackPanel>
+        </Button>
+        <DataGrid Name="ProjectGrid" x:CompileBindings="False" Margin="0 30 0 0" BorderBrush="Lavender" BorderThickness="10" Width="858">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="ID" Binding="{Binding ProjectID}"/>
+                <DataGridTextColumn  Header="Название" Binding="{Binding Name}"/>
+                <DataGridTextColumn  Header="Дата начала" Binding="{Binding DateStart}"/>
+                <DataGridTextColumn  Header="Дата окончания" Binding="{Binding DateEnd}"/>
+                <DataGridTextColumn  Header="Статус" Binding="{Binding Status}"/>
+                <DataGridTextColumn  Header="Приоритет" Binding="{Binding Priority}"/>
+                <DataGridTextColumn  Header="Бюджет" Binding="{Binding Budget}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

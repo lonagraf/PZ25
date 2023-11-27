@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PZ25.MainWindow"
+        Title="PZ25"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        IsHitTestVisible="True"
+        CanResize="False">
+    <Grid>
+        <Panel Name="MenuPanel" Height="410" Width="50" Background="MediumPurple" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button Name="ProjectBtn" Height="50" Width="50" Background="MediumPurple" VerticalAlignment="Top" Click="ProjectBtn_OnClick">
+                <StackPanel>
+                    <Image Source="Icons/project.png"/>
+                </StackPanel>
+            </Button>
+        </Panel>
+        <Panel Name="TitleBar" Height="40" Width="1000" Background="GhostWhite" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button Name="CloseBtn" Background="GhostWhite" HorizontalAlignment="Left" Width="40" Height="40" Margin="5 5 5 10" Click="CloseBtn_OnClick"> 
+                <StackPanel>
+                    <TextBlock Text="X" Foreground="MediumPurple" FontSize="30" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
+        </Panel>
+        <Panel Name="MainPanel" Height="405" Width="945" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 5 5" Background="White"></Panel>
+    </Grid>
+</Window>

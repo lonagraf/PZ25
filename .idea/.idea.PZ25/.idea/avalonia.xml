@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PZ25/AddProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/App.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/MainWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/ProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
