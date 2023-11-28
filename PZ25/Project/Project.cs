@@ -10,5 +10,5 @@ public class Project
     public DateTime DateEnd { get; set; }
     public string Status { get; set; }
     public string Priority { get; set; }
-    public decimal Budget { get; set; }
+    public int DaysLeft { get; set; }
 }

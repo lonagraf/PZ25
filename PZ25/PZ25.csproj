@@ -29,5 +29,32 @@
       <AvaloniaResource Include="Icons\square-plus.png" />
       <None Remove="Icons\square-minus.png" />
       <AvaloniaResource Include="Icons\square-minus.png" />
+      <None Remove="Icons\task.png" />
+      <AvaloniaResource Include="Icons\task.png" />
+      <None Remove="Icons\employee.png" />
+      <AvaloniaResource Include="Icons\employee.png" />
+      <None Remove="Icons\edit.png" />
+      <AvaloniaResource Include="Icons\edit.png" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Project\AddProjectWindow.axaml.cs">
+        <DependentUpon>AddProjectWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Project\ProjectWindow.axaml.cs">
+        <DependentUpon>ProjectWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Project\EditProjectWindow.axaml.cs">
+        <DependentUpon>Window1.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Task\TaskWindow.axaml" />
     </ItemGroup>
 </Project>

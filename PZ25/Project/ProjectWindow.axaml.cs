@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
@@ -15,13 +16,12 @@ public partial class ProjectWindow : UserControl
     private List<Project> _projects = new List<Project>();
 
     private string _fullTable =
-        "select project_id, project_name, date_start, date_end, status_name, priority_name, budget from project " +
-        "join pro1_4.priority p on project.priority = p.priority_id " +
-        "join pro1_4.status s on project.status = s.status_id;";
+        "select project_id, project_name, date_start, date_end, status_name, priority_name, DATEDIFF(date_end, now()) as days_left from project " +
+        "join pz25.priority p on project.priority = p.priority_id " +
+        "join pz25.status s on project.status = s.status_id;";
     public ProjectWindow()
     {
-        Width = 1000;
-        Height = 405;
+        
         InitializeComponent();
         ShowTable(_fullTable);
     }
@@ -41,7 +41,7 @@ public partial class ProjectWindow : UserControl
                 DateEnd = reader.GetDateTime("date_end"),
                 Status = reader.GetString("status_name"),
                 Priority = reader.GetString("priority_name"),
-                Budget = reader.GetDecimal("budget")
+                DaysLeft = reader.GetInt32("days_left")
             };
             _projects.Add(currentProject);
         }
@@ -89,6 +89,22 @@ public partial class ProjectWindow : UserControl
         {
             var box = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите проект для удаления!", ButtonEnum.Ok);
             var result = box.ShowAsync();
+        }
+    }
+
+    private void EditBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Project selectedProject = ProjectGrid.SelectedItem as Project;
+        if (selectedProject != null)
+        {
+            EditProjectWindow editProjectWindow = new EditProjectWindow(selectedProject);
+            editProjectWindow.Show();
+        }
+        else
+        {
+            var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите строку для редактирования",
+                ButtonEnum.Ok, Icon.Error);
+            var result = error.ShowAsync();
         }
     }
 }

@@ -5,8 +5,19 @@
       <map>
         <entry key="PZ25/AddProjectWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/App.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Employee/AddEmployeeWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Employee/EmployeeWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Employee/edfd.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/MainWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Project/AddProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Project/EditProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Project/EditWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Project/ProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Project/Window1.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/ProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Styles.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Task/TaskWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Window1.axaml" value="PZ25/PZ25.csproj" />
       </map>
     </option>
   </component>

@@ -5,7 +5,7 @@ namespace PZ25;
 
 public class Database
 {
-    private MySqlConnection _connection = new MySqlConnection(@"server=10.10.1.24;database=pro1_4;port=3306;User Id=user_01;password=user01pro");
+    private MySqlConnection _connection = new MySqlConnection(@"server=localhost;database=pz25;port=3306;User Id=root;password=IGraf123*");
 
     public void openConnection()
     {

@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PZ25.Employee.AddEmployeeWindow"
+        Title="Добавление сотрудника"
+        Width="400"
+        Height="450">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Имя" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <TextBox Name="NameTxt" Width="150"/>
+        <TextBlock Text="Фамилия" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <TextBox Name="SurnameTxt" Width="150"/>
+        <TextBlock Text="Почта" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <TextBox Name="EmailTxt" Width="150"/>
+        <TextBlock Text="Телефон" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <TextBox Name="NumberTxt" Width="150"/>
+        <Button Name="AddBtn" Width="150" Content="Добавить" HorizontalContentAlignment="Center" Background="Lavender" FontWeight="DemiBold" Margin="0 10 0 0" Click="AddBtn_OnClick"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+        x:Class="PZ25.EditProjectWindow"
+        Title="Редактирование проекта">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Название" HorizontalAlignment="Center"/>
+        <TextBox Name="NameTxt" Width="150"/>
+        <TextBlock Text="Дата начала" HorizontalAlignment="Center"/>
+        <CalendarDatePicker Name="StartDate" Width="150"/>
+        <TextBlock Text="Дата окончания" HorizontalAlignment="Center"/>
+        <CalendarDatePicker Name="EndDate" Width="150"/>
+        <TextBlock Text="Статус" HorizontalAlignment="Center"/>
+        <ComboBox Name="StatusCmb" Width="150"/>
+        <TextBlock Text="Приоритет" HorizontalAlignment="Center"/>
+        <ComboBox Name="PriorityCmb" Width="150"/>
+        <Button Name="EditBtn" Width="150" Content="Сохранить" HorizontalContentAlignment="Center" Margin="0 5 0 0 " Background="Lavender" FontWeight="DemiBold" Click="EditBtn_OnClick"/>
+    </StackPanel>
+</Window>

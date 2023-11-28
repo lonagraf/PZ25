@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -9,23 +9,29 @@ using MySql.Data.MySqlClient;
 
 namespace PZ25;
 
-public partial class AddProjectWindow : Window
+public partial class EditProjectWindow : Window
 {
     private Database _database = new Database();
-    public AddProjectWindow()
+    private Project _project;
+    public EditProjectWindow(Project project)
     {
         InitializeComponent();
-        Width = 400;
-        Height = 450;
+        _project = project;
+        NameTxt.Text = _project.Name;
+        StartDate.SelectedDate = _project.DateStart;
+        EndDate.SelectedDate = _project.DateEnd;
+        StatusCmb.SelectedItem = _project.Status;
+        PriorityCmb.SelectedItem = _project.Priority;
         LoadDataStatusCmb();
         LoadDataPriorityCmb();
     }
 
-    private void AddBtn_OnClick(object? sender, RoutedEventArgs e)
+    private void EditBtn_OnClick(object? sender, RoutedEventArgs e)
     {
+        int id = _project.ProjectID;
         _database.openConnection();
-        string sql = "insert into project (project_name, date_start, date_end, status, priority, budget) " +
-                     "values (@name, @start, @end, @status, @priority, @budget);";
+        string sql =
+            "update project set project_name = @name, date_start = @start, date_end = @end, status = @status, priority = @priority where project_id = @id";
         MySqlCommand command = new MySqlCommand(sql, _database.getConnection());
         command.Parameters.AddWithValue("@name", NameTxt.Text);
         command.Parameters.AddWithValue("@start", StartDate.SelectedDate.GetValueOrDefault());
@@ -34,36 +40,37 @@ public partial class AddProjectWindow : Window
         command.Parameters.AddWithValue("@status", selectedStatusId);
         int selectedPriorityId = GetSelectedPriorityId(PriorityCmb.SelectedItem.ToString());
         command.Parameters.AddWithValue("@priority", selectedPriorityId);
-        command.Parameters.AddWithValue("@budget", BudgetTxt.Text);
+        command.Parameters.AddWithValue("@id", id);
         command.ExecuteNonQuery();
-        _database.closeConnection();
-        var box = MessageBoxManager.GetMessageBoxStandard("Успешно", "Данные успешно добавлены!", ButtonEnum.Ok);
-        var result = box.ShowAsync();
+        var success = MessageBoxManager.GetMessageBoxStandard("Успешно", "Данные успешно изменены", ButtonEnum.Ok,
+            MsBox.Avalonia.Enums.Icon.Success);
+        var result = success.ShowAsync();
+        this.Close();
     }
 
-    public void LoadDataStatusCmb()
+    private void LoadDataStatusCmb()
     {
         _database.openConnection();
-        string sql = "select status_name from status;";
+        string sql = "select status_name from status";
         MySqlCommand command = new MySqlCommand(sql, _database.getConnection());
         MySqlDataReader reader = command.ExecuteReader();
         while (reader.Read())
         {
-            StatusCmb.Items.Add(reader["status_name"].ToString());
+            StatusCmb.Items.Add(reader["status_name"]).ToString();
         }
         _database.closeConnection();
     }
 
-    public int GetSelectedStatusId(string selectedStatus)
+    private int GetSelectedStatusId(string selectedName)
     {
         _database.openConnection();
-        string sql = "select status_id from status where status_name = @selectedStatus;";
+        string sql = "select status_id from status where status_name = @name";
         MySqlCommand command = new MySqlCommand(sql, _database.getConnection());
-        command.Parameters.AddWithValue("@selectedStatus", selectedStatus);
+        command.Parameters.AddWithValue("@name", selectedName);
         int selectedId = Convert.ToInt32(command.ExecuteScalar());
         return selectedId;
     }
-
+    
     public void LoadDataPriorityCmb()
     {
         _database.openConnection();

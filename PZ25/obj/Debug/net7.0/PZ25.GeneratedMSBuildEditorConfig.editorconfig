@@ -13,16 +13,25 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PZ25
-build_property.ProjectDir = /home/KHPK.RU/student/Рабочий стол/AAA/AAAC#/PZ25/PZ25/
+build_property.ProjectDir = C:\Users\lonah\RiderProjects\PZ25\PZ25\
 
-[/home/KHPK.RU/student/Рабочий стол/AAA/AAAC\#/PZ25/PZ25/AddProjectWindow.axaml]
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/KHPK.RU/student/Рабочий стол/AAA/AAAC\#/PZ25/PZ25/App.axaml]
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/Employee/AddEmployeeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/KHPK.RU/student/Рабочий стол/AAA/AAAC\#/PZ25/PZ25/MainWindow.axaml]
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/Employee/EmployeeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/KHPK.RU/student/Рабочий стол/AAA/AAAC\#/PZ25/PZ25/ProjectWindow.axaml]
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/Project/AddProjectWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/Project/EditProjectWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/lonah/RiderProjects/PZ25/PZ25/Project/ProjectWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
