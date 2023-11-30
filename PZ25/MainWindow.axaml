@@ -7,10 +7,11 @@
         Title="Система управления проектами"
         CanResize="False"
         Width="1000"
-        Height="450">
+        Height="450"
+        Icon="Icons/home.png">
     <Grid>
-        <Panel Name="MenuPanel" Height="450" Width="50" Background="MediumPurple" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-            <Button Name="ProjectBtn" Height="50" Width="50" Background="MediumPurple" VerticalAlignment="Top" Click="ProjectBtn_OnClick">
+        <Panel Name="MenuPanel" Height="450" Width="50" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button Name="ProjectBtn" Height="50" Width="50" Background="White" VerticalAlignment="Top" Click="ProjectBtn_OnClick">
                 <StackPanel>
                     <ToolTip.Tip>
                         <TextBlock>Проекты</TextBlock>
@@ -18,7 +19,7 @@
                     <Image Source="Icons/project.png"/>
                 </StackPanel>
             </Button>
-            <Button Name="EmployeeBtn" Height="50" Width="50" Background="MediumPurple" VerticalAlignment="Top" Margin="0 50 0 0" Click="EmployeeBtn_OnClick">
+            <Button Name="EmployeeBtn" Height="50" Width="50" Background="White" VerticalAlignment="Top" Margin="0 50 0 0" Click="EmployeeBtn_OnClick">
                 <StackPanel>
                     <ToolTip.Tip>
                         <TextBlock>Сотрудники</TextBlock>
@@ -27,6 +28,6 @@
                 </StackPanel>
             </Button>
         </Panel>
-        <Panel Name="MainPanel" Height="450" Width="945" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 5 5" Background="White"></Panel>
+        <Panel Name="MainPanel" Height="450" Width="945" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 5 5" Background="Lavender"></Panel>
     </Grid>
 </Window>

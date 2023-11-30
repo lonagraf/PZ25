@@ -1,0 +1,19 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        x:Class="PZ25.Windows.ProjectEmployees.AddProjectEmployee"
+        Title="Добавление"
+        Width="400"
+        Height="300">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Проект" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <ComboBox Name="ProjectCmb" Width="150"/>
+        <TextBlock Text="Сотрудник" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <ComboBox Name="EmployeeCmb" Width="150"/>
+        <TextBlock Text="Роль" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+        <ComboBox Name="RoleCmb" Width="150"/>
+        <Button Name="AddBtn" Content="Добавить" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Background="Lavender" FontWeight="DemiBold" Click="AddBtn_OnClick"/>
+    </StackPanel>
+</Window>

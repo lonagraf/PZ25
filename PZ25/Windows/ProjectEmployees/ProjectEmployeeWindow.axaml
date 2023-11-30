@@ -1,0 +1,29 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PZ25.Windows.ProjectEmployees.ProjectEmployeeWindow"
+             Width="800"
+             Height="400">
+   <Grid>
+       <Button Name="AddBtn" VerticalAlignment="Top" Height="35" Width="35" Background="Lavender" Margin="200 0 0 0" Click="AddBtn_OnClick">
+           <StackPanel>
+               <Image Source="../../Icons/square-plus.png"/>
+           </StackPanel>
+       </Button>
+       <Button Name="DeleteBtn" VerticalAlignment="Top" Height="35" Width="35" Background="Lavender" Margin="235 0 0 0" Click="DeleteBtn_OnClick">
+           <StackPanel>
+               <Image Source="../../Icons/square-minus.png"/>
+           </StackPanel>
+       </Button>
+       <DataGrid Name="ProjEmployeeGrid" x:CompileBindings="False" HorizontalAlignment="Center" Margin="0 35 0 0" BorderBrush="LightSteelBlue" BorderThickness="5">
+           <DataGrid.Columns>
+               <DataGridTextColumn Header="ID" Binding="{Binding ProjectEmployeeID}"/>
+               <DataGridTextColumn Header="Проект" Binding="{Binding Project}"/>
+               <DataGridTextColumn Header="Сотрудник" Binding="{Binding Employee}"/>
+               <DataGridTextColumn Header="Роль" Binding="{Binding Role}"/>
+           </DataGrid.Columns>
+       </DataGrid>
+   </Grid>
+</UserControl>

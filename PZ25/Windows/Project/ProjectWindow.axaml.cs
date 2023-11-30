@@ -7,6 +7,7 @@ using Avalonia.Markup.Xaml;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
 using MySql.Data.MySqlClient;
+using PZ25.Windows.ProjectEmployees;
 
 namespace PZ25;
 
@@ -106,5 +107,12 @@ public partial class ProjectWindow : UserControl
                 ButtonEnum.Ok, Icon.Error);
             var result = error.ShowAsync();
         }
+    }
+
+    private void ProjEmployeeBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        MainPanel.Children.Clear();
+        ProjectEmployeeWindow projectEmployeeWindow = new ProjectEmployeeWindow();
+        MainPanel.Children.Add(projectEmployeeWindow);
     }
 }

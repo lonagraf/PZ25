@@ -7,22 +7,31 @@
              Width = "1000"
              Height = "440">
     <Grid>
-        <Button Name="AddBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="White" Margin="70 50 0 0" Click="AddBtn_OnClick">
+        <Panel Name="TopPanel"  Height="40" Width="971.5" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Name="ProjEmployeeBtn" Background="Lavender" BorderBrush="LightSteelBlue" Margin="55 0 0 0" BorderThickness="3" Click="ProjEmployeeBtn_OnClick">
+                <TextBlock Text="Сотрудники проекта" FontSize="15" FontWeight="DemiBold" />
+            </Button>
+            <Button Name="ProjResourceBtn" Background="Lavender" BorderBrush="LightSteelBlue" Margin="235 0 0 0" BorderThickness="3">
+                <TextBlock Text="Ресурсы проекта" FontSize="15" FontWeight="DemiBold" />
+            </Button>
+        </Panel>
+        <Panel Name="MainPanel" Height="400" VerticalAlignment="Bottom" Width="971.5" HorizontalAlignment="Right">
+        <Button Name="AddBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="Lavender" Margin="55 0 0 0" Click="AddBtn_OnClick">
             <StackPanel>
                 <Image Source="/Icons/square-plus.png"/>
             </StackPanel>
         </Button>
-        <Button Name="DeleteBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="White" Margin="105 50 0 0" Click="DeleteBtn_OnClick">
+        <Button Name="DeleteBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="Lavender" Margin="90 0 0 0" Click="DeleteBtn_OnClick">
             <StackPanel>
                 <Image Source="/Icons/square-minus.png"/>
             </StackPanel>
         </Button>
-        <Button Name="EditBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="White" Margin="140 50 0 0" Click="EditBtn_OnClick">
+        <Button Name="EditBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="Lavender" Margin="125 0 0 0" Click="EditBtn_OnClick">
             <StackPanel>
                 <Image Source="/Icons/edit.png"/>
             </StackPanel>
         </Button>
-        <DataGrid Name="ProjectGrid" x:CompileBindings="False" Margin="0 80 0 0" BorderBrush="Lavender" BorderThickness="10" Width="858">
+        <DataGrid Name="ProjectGrid" x:CompileBindings="False" Margin="0 30 0 0" BorderBrush="LightSteelBlue" BorderThickness="5" Width="858">
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="ID" Binding="{Binding ProjectID}"/>
                 <DataGridTextColumn  Header="Название" Binding="{Binding Name}"/>
@@ -33,5 +42,6 @@
                 <DataGridTextColumn Header="Осталось" Binding="{Binding DaysLeft}"/>
             </DataGrid.Columns>
         </DataGrid>
+        </Panel>
     </Grid>
 </UserControl>

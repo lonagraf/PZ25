@@ -30,11 +30,12 @@
       <None Remove="Icons\square-minus.png" />
       <AvaloniaResource Include="Icons\square-minus.png" />
       <None Remove="Icons\task.png" />
-      <AvaloniaResource Include="Icons\task.png" />
       <None Remove="Icons\employee.png" />
       <AvaloniaResource Include="Icons\employee.png" />
       <None Remove="Icons\edit.png" />
       <AvaloniaResource Include="Icons\edit.png" />
+      <None Remove="Icons\home.png" />
+      <AvaloniaResource Include="Icons\home.png" />
     </ItemGroup>
 
 
@@ -51,10 +52,25 @@
         <DependentUpon>Window1.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="MainWindow.axaml.cs">
+        <DependentUpon>MainWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
 
     <ItemGroup>
       <UpToDateCheckInput Remove="Task\TaskWindow.axaml" />
+      <UpToDateCheckInput Remove="Employee\AddEmployeeWindow.axaml" />
+      <UpToDateCheckInput Remove="Employee\EmployeeWindow.axaml" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AdditionalFiles Include="Windows\Employee\AddEmployeeWindow.axaml" />
+      <AdditionalFiles Include="Windows\Employee\EmployeeWindow.axaml" />
+      <AdditionalFiles Include="Windows\Project\AddProjectWindow.axaml" />
+      <AdditionalFiles Include="Windows\Project\EditProjectWindow.axaml" />
+      <AdditionalFiles Include="Windows\Project\ProjectWindow.axaml" />
     </ItemGroup>
 </Project>
