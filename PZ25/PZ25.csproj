@@ -36,6 +36,10 @@
       <AvaloniaResource Include="Icons\edit.png" />
       <None Remove="Icons\home.png" />
       <AvaloniaResource Include="Icons\home.png" />
+      <None Remove="Icons\sortAZ.png" />
+      <AvaloniaResource Include="Icons\sortAZ.png" />
+      <None Remove="Icons\sortZA.png" />
+      <AvaloniaResource Include="Icons\sortZA.png" />
     </ItemGroup>
 
 

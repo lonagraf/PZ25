@@ -11,9 +11,6 @@
             <Button Name="ProjEmployeeBtn" Background="Lavender" BorderBrush="LightSteelBlue" Margin="55 0 0 0" BorderThickness="3" Click="ProjEmployeeBtn_OnClick">
                 <TextBlock Text="Сотрудники проекта" FontSize="15" FontWeight="DemiBold" />
             </Button>
-            <Button Name="ProjResourceBtn" Background="Lavender" BorderBrush="LightSteelBlue" Margin="235 0 0 0" BorderThickness="3">
-                <TextBlock Text="Ресурсы проекта" FontSize="15" FontWeight="DemiBold" />
-            </Button>
         </Panel>
         <Panel Name="MainPanel" Height="400" VerticalAlignment="Bottom" Width="971.5" HorizontalAlignment="Right">
         <Button Name="AddBtn" VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Width="35" Background="Lavender" Margin="55 0 0 0" Click="AddBtn_OnClick">
@@ -31,6 +28,18 @@
                 <Image Source="/Icons/edit.png"/>
             </StackPanel>
         </Button>
+            <TextBlock Text="Поиск по названию:" VerticalAlignment="Top" Margin=" 160 5 0 0"/>
+            <TextBox Name="SearchTxt" Width="150" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="300 0 0 0" TextChanged="SearchTxt_OnTextChanged"/>
+            <Button Name="SortAscBtn" Width="35" Height="35" Background="Lavender" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 0 25 0" Click="SortAscBtn_OnClick">
+                <StackPanel>
+                    <Image Source="../../Icons/sortAZ.png"/>
+                </StackPanel>
+            </Button>
+            <Button Name="SortDescBtn" Width="35" Height="35" Background="Lavender" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50 0 0 0" Click="SortDescBtn_OnClick">
+                <StackPanel>
+                    <Image Source="../../Icons/sortZA.png"/>
+                </StackPanel>
+            </Button>
         <DataGrid Name="ProjectGrid" x:CompileBindings="False" Margin="0 30 0 0" BorderBrush="LightSteelBlue" BorderThickness="5" Width="858">
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="ID" Binding="{Binding ProjectID}"/>

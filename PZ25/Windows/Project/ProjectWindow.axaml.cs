@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -114,5 +115,23 @@ public partial class ProjectWindow : UserControl
         MainPanel.Children.Clear();
         ProjectEmployeeWindow projectEmployeeWindow = new ProjectEmployeeWindow();
         MainPanel.Children.Add(projectEmployeeWindow);
+    }
+
+    private void SearchTxt_OnTextChanged(object? sender, TextChangedEventArgs e)
+    {
+        List<Project> search = _projects.Where(x => x.Name.ToLower().Contains(SearchTxt.Text.ToLower())).ToList();
+        ProjectGrid.ItemsSource = search;
+    }
+
+    private void SortAscBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        List<Project> sortAsc = _projects.OrderBy(x => x.Name).ToList();
+        ProjectGrid.ItemsSource = sortAsc;
+    }
+
+    private void SortDescBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        List<Project> sortDesc = _projects.OrderByDescending(x => x.Name).ToList();
+        ProjectGrid.ItemsSource = sortDesc;
     }
 }

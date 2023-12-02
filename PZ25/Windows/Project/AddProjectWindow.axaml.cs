@@ -24,8 +24,8 @@ public partial class AddProjectWindow : Window
     private void AddBtn_OnClick(object? sender, RoutedEventArgs e)
     {
         _database.openConnection();
-        string sql = "insert into project (project_name, date_start, date_end, status, priority, budget) " +
-                     "values (@name, @start, @end, @status, @priority, @budget);";
+        string sql = "insert into project (project_name, date_start, date_end, status, priority) " +
+                     "values (@name, @start, @end, @status, @priority);";
         MySqlCommand command = new MySqlCommand(sql, _database.getConnection());
         command.Parameters.AddWithValue("@name", NameTxt.Text);
         command.Parameters.AddWithValue("@start", StartDate.SelectedDate.GetValueOrDefault());
