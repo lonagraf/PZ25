@@ -24,6 +24,7 @@ public partial class EditProjectWindow : Window
         PriorityCmb.SelectedItem = _project.Priority;
         LoadDataStatusCmb();
         LoadDataPriorityCmb();
+        Icon = new WindowIcon("Icons/edit.png");
     }
 
     private void EditBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -92,5 +93,10 @@ public partial class EditProjectWindow : Window
         command.Parameters.AddWithValue("@selectedPriority", selectedPriority);
         int selectedId = Convert.ToInt32(command.ExecuteScalar());
         return selectedId;
+    }
+
+    private void BackBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }

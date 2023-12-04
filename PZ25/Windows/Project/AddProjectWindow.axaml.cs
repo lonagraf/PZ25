@@ -19,6 +19,7 @@ public partial class AddProjectWindow : Window
         Height = 450;
         LoadDataStatusCmb();
         LoadDataPriorityCmb();
+        Icon = new WindowIcon("Icons/square-plus.png");
     }
 
     private void AddBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -84,5 +85,10 @@ public partial class AddProjectWindow : Window
         command.Parameters.AddWithValue("@selectedPriority", selectedPriority);
         int selectedId = Convert.ToInt32(command.ExecuteScalar());
         return selectedId;
+    }
+
+    private void BackBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }

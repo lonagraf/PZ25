@@ -18,9 +18,11 @@
         <entry key="PZ25/Styles.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Task/TaskWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Window1.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Windows/Employee/AddEmployeeWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Windows/Employee/EmployeeWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Windows/MainWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Windows/Project/AddProjectWindow.axaml" value="PZ25/PZ25.csproj" />
+        <entry key="PZ25/Windows/Project/EditProjectWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Windows/Project/ProjectWindow.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Windows/ProjectEmployees/AddProjectEmployee.axaml" value="PZ25/PZ25.csproj" />
         <entry key="PZ25/Windows/ProjectEmployees/ProjectEmployeeWindow.axaml" value="PZ25/PZ25.csproj" />

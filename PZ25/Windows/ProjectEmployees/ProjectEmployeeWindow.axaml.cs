@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -14,6 +15,7 @@ public partial class ProjectEmployeeWindow : UserControl
 {
     private Database _database = new Database();
     private List<ProjectEmployee> _projectEmployees = new List<ProjectEmployee>();
+    private List<Role> _roles = new List<Role>();
 
     private string _fullTable =
         "select project_employees_id, project_name, concat(firstname, ' ', surname) as employee, role_name from project_employees " +
@@ -24,6 +26,7 @@ public partial class ProjectEmployeeWindow : UserControl
     {
         InitializeComponent();
         ShowTable(_fullTable);
+        LoadDataRoleCmb();
     }
 
     private void ShowTable(string sql)
@@ -87,5 +90,30 @@ public partial class ProjectEmployeeWindow : UserControl
             var error = MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите строку для удаления", ButtonEnum.Ok, Icon.Error);
             var resultError = error.ShowAsync();
         }
+    }
+
+    private void LoadDataRoleCmb()
+    {
+        _database.openConnection();
+        string sql = "select role_name from role";
+        MySqlCommand command = new MySqlCommand(sql, _database.getConnection());
+        MySqlDataReader reader = command.ExecuteReader();
+        while (reader.HasRows && reader.Read())
+        {
+            var currentRole = new Role()
+            {
+                RoleName = reader.GetString("role_name")
+            };
+            _roles.Add(currentRole);
+        }
+        _database.closeConnection();
+        RoleCmb.ItemsSource = _roles;
+    }
+
+    private void RoleCmb_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        var currentRole = RoleCmb.SelectedItem as Role;
+        var filtered = _projectEmployees.Where(x => x.Role == currentRole.RoleName).ToList();
+        ProjEmployeeGrid.ItemsSource = filtered;
     }
 }

@@ -15,5 +15,6 @@
         <TextBlock Text="Роль" HorizontalAlignment="Center" FontWeight="DemiBold"/>
         <ComboBox Name="RoleCmb" Width="150"/>
         <Button Name="AddBtn" Content="Добавить" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="5" Background="Lavender" FontWeight="DemiBold" Click="AddBtn_OnClick"/>
+        <Button Name="BackBtn" Width="150" Content="Назад" HorizontalContentAlignment="Center" Background="Lavender" FontWeight="DemiBold" Margin="0 5 0 0" Click="BackBtn_OnClick"/>
     </StackPanel>
 </Window>

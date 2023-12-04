@@ -19,5 +19,6 @@
         <TextBlock Text="Приоритет" HorizontalAlignment="Center"/>
         <ComboBox Name="PriorityCmb" Width="150"/>
         <Button Name="AddBtn" Width="150" Content="Добавить" HorizontalContentAlignment="Center" Margin="0 5 0 0 " Background="Lavender" FontWeight="DemiBold" Click="AddBtn_OnClick"/>
+        <Button Name="BackBtn" Width="150" Content="Назад" HorizontalContentAlignment="Center" Background="Lavender" FontWeight="DemiBold" Margin="0 5 0 0" Click="BackBtn_OnClick"/>
     </StackPanel>
 </Window>

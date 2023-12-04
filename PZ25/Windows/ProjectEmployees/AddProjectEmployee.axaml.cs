@@ -18,6 +18,7 @@ public partial class AddProjectEmployee : Window
         LoadDataProjectCmb();
         LoadDataEmployeeCmb();
         LoadDataRoleCmb();
+        Icon = new WindowIcon("Icons/square-plus.png");
     }
 
     private void AddBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -105,5 +106,10 @@ public partial class AddProjectEmployee : Window
         command.Parameters.AddWithValue("@selectedRole", selectedRole);
         int selectedId = Convert.ToInt32(command.ExecuteScalar());
         return selectedId;
+    }
+
+    private void BackBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }

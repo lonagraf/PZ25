@@ -14,6 +14,7 @@ public partial class AddEmployeeWindow : Window
     public AddEmployeeWindow()
     {
         InitializeComponent();
+        Icon = new WindowIcon("Icons/square-plus.png");
     }
 
     private void AddBtn_OnClick(object? sender, RoutedEventArgs e)
@@ -31,6 +32,11 @@ public partial class AddEmployeeWindow : Window
         var box = MessageBoxManager.GetMessageBoxStandard("Успешно", "Данные успешно добавлены!", ButtonEnum.Ok,
             MsBox.Avalonia.Enums.Icon.Success);
         var result = box.ShowAsync();
+        this.Close();
+    }
+
+    private void BackBtn_OnClick(object? sender, RoutedEventArgs e)
+    {
         this.Close();
     }
 }
